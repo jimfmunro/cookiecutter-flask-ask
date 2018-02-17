@@ -1,3 +1,4 @@
 # Lambda version
+# Flask-ask version that works on Lambda-only deployment.
 -e git+git@github.com:jimfmunro/flask-ask.git#egg=flask_ask
 zappa==0.45.1
