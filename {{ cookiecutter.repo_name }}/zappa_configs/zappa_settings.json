@@ -3,7 +3,7 @@
     "app_function": "{{cookiecutter.repo_name}}.app",
     "app_function": "lambda_function.app",
     "aws_region": "us-east-1",
-    "profile_name": "{{cookier_cutter.lambda_user}}",
+    "profile_name": "{{cookier_cutter.lambda_role}}",
     "project_name": "epic-math",
     "runtime": "python3.6",
     "lamda_user": "lambda_user",

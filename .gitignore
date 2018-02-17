@@ -6,6 +6,9 @@
 # User-specific stuff:
 .idea/
 
+## Platform
+.DS_Store
+
 ## File-based project format:
 *.iws
 
