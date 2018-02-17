@@ -7,6 +7,8 @@
   "github_username": "username",
   "aws_region": "us-east-1",
   "lambda_role": "lambda_role",
-  "version": "0.1.0",
-  "port": 5000
+  "lambda_function_name": "lambda_function_name",
+  "lambda_handler": "{{cookiecutter.repo_name}}.lambda_handler",
+  "port": 5000,
+  "version": "0.1.0"
 }

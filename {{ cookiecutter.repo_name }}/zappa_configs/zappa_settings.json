@@ -1,12 +1,10 @@
 {
   "dev": {
-    "app_function": "{{cookiecutter.repo_name}}.app",
-    "app_function": "lambda_function.app",
+    "app_function": "{{cookiecutter.lambda_handler}}",
     "aws_region": "us-east-1",
-    "profile_name": "{{cookier_cutter.lambda_role}}",
-    "project_name": "epic-math",
+    "profile_name": "{{cookiecutter.lambda_role}}",
+    "project_name": "{{cookiecutter.repo_name}}",
     "runtime": "python3.6",
-    "lamda_user": "lambda_user",
     "s3_bucket": "zappa_{{cookiecutter.repo_name}}",
     "parameter_depth": 1
   }

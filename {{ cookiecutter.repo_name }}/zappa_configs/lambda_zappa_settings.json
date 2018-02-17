@@ -1,6 +1,6 @@
 {
     "lambda": {
-        "lambda_handler": "{{cookiecutter.repo_name}}.lambda_handler",
+        "lambda_handler": "{{cookiecutter.lambda_handler}}",
         "aws_region": "us-east-1",
         "profile_name": "{{cookiecutter.lambda_role}}",
         "project_name": "{{cookiecutter.repo_name}}",

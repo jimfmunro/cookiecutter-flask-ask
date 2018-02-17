@@ -45,12 +45,27 @@ On the Alexa skill Ssl Certificate page:
 Lambda Environment Setup without Api Gateway
 -----
 
+Deploy the Lambda function with Zappa:
+
+    > zappa deploy stage_name
+
 To deploy & host this on an Aws lambda only, without a api gateway.
 
 On the Alexa skill Configuration page:
 * Select AWS Lambda ARN (Amazon Resource Name) for your Services Endpoint Type.
 * Enter the Arn of your Alexa skill Lambda into the Default field.
 * Save or Next.
+
+* Add the Alexa skill as a trigger to the lambda:
+** Manually in the lambda console.
+** Via ask cli
+
+    aws lambda add-permission \
+        --function-name {{cookiecutter.lambda_function_name}} \
+        --statement-id 1 \
+        --action lambda:InvokeFunction \
+        --principal alexa-appkit.amazon.com \
+        --event-source-token amzn1.ask.skill.<skill_id_string>
 
 
 Quickstart
