@@ -5,6 +5,7 @@
   "author_name": "Your Name",
   "author_email_address": "your@email-address.io",
   "github_username": "username",
+  "aws_region": "us-east-1",
   "version": "0.1.0",
   "port": 5000
 }

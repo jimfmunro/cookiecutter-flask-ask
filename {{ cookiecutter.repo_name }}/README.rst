@@ -6,15 +6,52 @@
 Setup
 -----
 
+Development Environment Setup
+-----
+
 It is recommended to run this project in a virtualenv. If virtualenvs are unfamiliar to you, `this handy tutorial`_
 might be a good place to start.
 
 #.  Create a virtualenv for this project, and activate it.
-#.  Use ``pip install -r requirements.txt`` to install the required Python packages.
+#.  Use ``pip install -r requirements/requirements.txt`` to install the required Python packages.
 #.  You will require ``ngrok`` to make your skill accessible to Alexa for testing. You can download ngrok `here`_.
 
 .. _here: https://ngrok.com/download
 .. _this handy tutorial: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
+To run your local server:
+    > ngrok http 5000
+
+Copy & paste the output https url into the skill's  page.
+
+Lambda Environment Setup with an Api Gateway
+-----
+
+To deploy & host this on an Aws lambda and Api gateway.
+
+Set up your Skill information and Interaction model.
+
+On the Alexa skill Configuration page:
+* Select Https for your Services Endpoint Type.
+* Enter the ngrok https url into the Default field.
+* Save or Next.
+
+On the Alexa skill Ssl Certificate page:
+* Select the radio button: "My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority".
+* Save or Next.
+* Test away...
+
+
+Lambda Environment Setup without Api Gateway
+-----
+
+To deploy & host this on an Aws lambda only, without a api gateway.
+
+On the Alexa skill Configuration page:
+* Select AWS Lambda ARN (Amazon Resource Name) for your Services Endpoint Type.
+* Enter the Arn of your Alexa skill Lambda into the Default field.
+* Save or Next.
+
 
 Quickstart
 ----------

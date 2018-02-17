@@ -1,0 +1,3 @@
+# Lambda version
+-e git+git@github.com:jimfmunro/flask-ask.git#egg=flask_ask
+zappa==0.45.1
