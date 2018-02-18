@@ -145,5 +145,10 @@ def session_ended():
     return statement("")
 
 
+# If using a local webhost
 if __name__ == '__main__':
     app.run(debug=True)
+
+## If using a Lambda directly. Install requirements/lambda_requirements.txt
+def lambda_handler(event, _context):
+    return ask.run_aws_lambda(event)
