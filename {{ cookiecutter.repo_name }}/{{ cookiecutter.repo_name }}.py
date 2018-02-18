@@ -132,18 +132,7 @@ def start_over():
 
 @ask.session_ended
 def session_ended():
-    """
-    Returns an empty for `session_ended`.
-
-    .. warning::
-
-    The status of this is somewhat controversial. The `official documentation`_ states that you cannot return a response
-    to ``SessionEndedRequest``. However, if it only returns a ``200/OK``, the quit utterance (which is a default test
-    utterance!) will return an error and the skill will not validate.
-
-    """
-    return statement("")
-
+    return "{}", 200
 
 # If using a local webhost
 if __name__ == '__main__':
