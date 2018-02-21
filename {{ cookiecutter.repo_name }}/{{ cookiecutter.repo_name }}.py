@@ -66,78 +66,71 @@ def handle_launch():
 #
 # More about built-in intents: http://d.pr/KKyx
 
+# (STATEMENT) Handles the 'stop' built-in intention.
 @ask.intent('AMAZON.StopIntent')
 def handle_stop():
-    """
-    (STATEMENT) Handles the 'stop' built-in intention.
-    """
     farewell_text = render_template('stop_bye')
     return statement(farewell_text)
 
 
+# (STATEMENT) Handles the 'cancel' built-in intention.
 @ask.intent('AMAZON.CancelIntent')
 def handle_cancel():
-    """
-    (STATEMENT) Handles the 'cancel' built-in intention.
-    """
     farewell_text = render_template('cancel_bye')
     return statement(farewell_text)
 
 
+# (Question) Handles the 'help' built-in intention.
 @ask.intent('AMAZON.HelpIntent')
 def handle_help():
-    """
-    (QUESTION) Handles the 'help' built-in intention.
-
-    You can provide context-specific help here by rendering templates conditional on the help referrer.
-    """
-
     help_text = render_template('help_text')
     return question(help_text)
 
 
+# Handles the 'no' built-in intention.
 @ask.intent('AMAZON.NoIntent')
 def handle_no():
-    """
-    (?) Handles the 'no' built-in intention.
-    """
     pass
 
+
+# Handles the 'yes'  built-in intention.
 @ask.intent('AMAZON.YesIntent')
 def handle_yes():
-    """
-    (?) Handles the 'yes'  built-in intention.
-    """
     pass
 
 
+# Handles the 'go back!'  built-in intention.
 @ask.intent('AMAZON.PreviousIntent')
 def handle_back():
-    """
-    (?) Handles the 'go back!'  built-in intention.
-    """
     pass
 
+
+# (Question) Handles the 'start over!'  built-in intention.
 @ask.intent('AMAZON.StartOverIntent')
 def start_over():
-    """
-    (QUESTION) Handles the 'start over!'  built-in intention.
-    """
+    pass
+
+# ==================================#
+# Specify your custom intents here. #
+# ==================================#
+
+
+@ask.intent('YourCustomIntent')
+def my_custom_intent():
     pass
 
 
 # Ending session
-#
-# This intention ends the session.
-
 @ask.session_ended
 def session_ended():
     return "{}", 200
+
 
 # If using a local webhost
 if __name__ == '__main__':
     app.run(debug=True)
 
-## If using a Lambda directly. Install requirements/lambda_requirements.txt
+
+# If using a Lambda directly. Install requirements/lambda_requirements.txt
 def lambda_handler(event, _context):
     return ask.run_aws_lambda(event)
