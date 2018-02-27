@@ -132,5 +132,5 @@ if __name__ == '__main__':
 
 
 # If using a Lambda directly. Install requirements/lambda_requirements.txt
-def lambda_handler(event, _context):
+def {{cookiecutter.lambda_handler}}(event, _context):
     return ask.run_aws_lambda(event)

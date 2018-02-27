@@ -1,0 +1,4 @@
+
+# Flask-ask version that works on Lambda-only deployment and fixes a couple of fatal errors.
+-e git+https://github.com/jimfmunro/flask-ask.git#egg=flask_ask
+zappa==0.45.1
